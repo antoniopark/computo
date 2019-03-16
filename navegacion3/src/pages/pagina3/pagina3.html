@@ -1,0 +1,53 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{ mutante.nombre }}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding class="masters">
+  
+
+     
+    <ion-card class="negro">
+      <img width="250" height="250" src="../assets/imgs/cruz.jpg"/>
+      <ion-card-content>
+        <ion-card-title style="color:white;">
+          Ernesto de la Cruz
+          </ion-card-title>
+        <p style="color:white;">
+          {{ mutante.muerte }} <br>
+          {{ mutante.epitafio }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+
+  
+
+  <button ion-button
+          block
+          color="primary"
+          (click)="irAtras()">
+          ir atras con evento
+  </button>
+
+  <button ion-button
+          block
+          color="primary"
+          (click)="irRoot()">
+          ir al root
+  </button>
+
+  <button ion-button
+  block
+  color="danger"
+  navPop>
+  ir atras sin evento
+</button>
+
+
+  </ion-content>
+  
