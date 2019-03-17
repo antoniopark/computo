@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 
 
-import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage} from "../pages/index.paginas";
+import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, PageBuscarPage} from "../pages/index.paginas";
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,Ta
     ModalPage,
     nfcPage,
     PerfilesPage,
-    TabsPage
+    TabsPage,
+    PageBuscarPage
   ],
   imports: [
     BrowserModule,

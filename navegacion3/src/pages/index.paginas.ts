@@ -5,3 +5,4 @@ export {ModalPage} from "./modal/modal";
 export {nfcPage} from "./nfc/nfc";
 export {PerfilesPage} from "./perfilesMuertos/perfiles";
 export {TabsPage} from "./tabs/tabs";  
+export {PageBuscarPage} from "./page-buscar/page-buscar";
