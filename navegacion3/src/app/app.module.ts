@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 
 
-import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,Pagina2Page,Pagina3Page,TabsPage} from "../pages/index.paginas";
+import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage} from "../pages/index.paginas";
 
 @NgModule({
   declarations: [
@@ -16,8 +16,8 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,Pagina2Page,Pagina3Page
     Ajustes2Page,
     PrincipalPage,
     ModalPage,
-    Pagina2Page,
-    Pagina3Page,
+    nfcPage,
+    PerfilesPage,
     TabsPage
   ],
   imports: [
@@ -30,8 +30,8 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,Pagina2Page,Pagina3Page
     Ajustes2Page,
     PrincipalPage,
     ModalPage,
-    Pagina2Page,
-    Pagina3Page,
+    nfcPage,
+    PerfilesPage,
     TabsPage
   ],
   providers: [

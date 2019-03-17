@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { NavParams, NavController } from "ionic-angular";
 
 @Component({
-    selector: 'page-pagina3',
-    templateUrl: 'pagina3.html',
+    selector: 'page-perfiles',
+    templateUrl: 'perfiles.html',
   })
-  export class Pagina3Page {
+  export class PerfilesPage {
   
     mutante:any = {};
 

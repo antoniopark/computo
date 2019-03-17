@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { Pagina3Page } from "../index.paginas";
+import { PerfilesPage } from "../index.paginas";
 
 
 
 @Component({
-  selector: 'page-pagina2',
-  templateUrl: 'pagina2.html',
+  selector: 'page-nfc',
+  templateUrl: 'nfc.html',
 })
-export class Pagina2Page {
+export class nfcPage {
 
-  pagina3:any = Pagina3Page;
+  perfiles:any = PerfilesPage;
 
   mutantes:any[] = [
     {
@@ -41,7 +41,7 @@ export class Pagina2Page {
   irPagina3( mutante:any ){
     console.log( mutante );
 
-      this.navCtrl.push( Pagina3Page, { 'mutante': mutante } );
+      this.navCtrl.push( PerfilesPage, { 'mutante': mutante } );
 
   }
 
