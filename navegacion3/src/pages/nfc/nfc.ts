@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { NFC, Ndef } from "@ionic-native/nfc/ngx";
 import { PerfilesPage } from "../index.paginas";
+import { Observable } from 'rxjs';
+import { HttpClient } from "@angular/common/http";
 
 
 
@@ -11,6 +13,7 @@ import { PerfilesPage } from "../index.paginas";
 })
 export class nfcPage {
 
+  results:any = Observable; // ?? 
   perfiles:any = PerfilesPage;
 //aqui se estara escuchando el nfc 
 //una vez que lo encuentre, se hace el ajax request con el que recibió 
@@ -38,7 +41,8 @@ export class nfcPage {
     }]; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private nfc: NFC, private ndef: Ndef) {
+    private nfc: NFC, private ndef: Ndef,
+    public httpClient: HttpClient) {
       //aqui escucha al nfc 
       this.nfc.addNdefListener(() => {
         console.log('attached ndef listener');
@@ -51,10 +55,15 @@ export class nfcPage {
       });
       
   }
-
-  ajaxCall(tag:any){
-
-  }
+  //fetching api
+  ajaxCall(idABuscar:any){
+    this.results = this.httpClient.get('url/'+idABuscar);
+    this.results
+    .subscribe(data => {
+      console.log('resultados: ', data);
+    })
+  } 
+  //ya que tenga los datos, irAPaginaPerfil con los datos para mostrar
   
 
   irPaginaPerfil( mutante:any ){
