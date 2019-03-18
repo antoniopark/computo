@@ -1,7 +1,7 @@
 <ion-header>
 
     <ion-navbar>
-      <ion-title>{{ muerto.nombre }}</ion-title>
+      <ion-title>{{ muerto.nombres }}</ion-title>
     </ion-navbar>
   
   </ion-header>
@@ -13,11 +13,11 @@
       <img width="250" height="250" src="../assets/imgs/cruz.jpg"/>
       <ion-card-content>
         <ion-card-title style="color:white;">
-          Ernesto de la Cruz
+          {{muerto.nombres + " " + muerto.apellidos }}
           </ion-card-title>
         <p style="color:white;">
-          {{ muerto.muerte }} <br>
-          {{ muerto.epitafio }}
+          {{ muerto.epitafio }} <br>
+          {{ muerto.ubicacion }}
         </p>
       </ion-card-content>
     </ion-card>
