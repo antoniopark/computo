@@ -57,7 +57,7 @@ export class nfcPage {
   }
   //fetching api
   ajaxCall(idABuscar:any){
-    this.results = this.httpClient.get('url/'+idABuscar);
+    this.results = this.httpClient.get('https://skeleton-app-itson.000webhostapp.com/rest/rest/index.php/Muertos/obtener_muertosById/'+idABuscar);
     this.results
     .subscribe(data => {
       console.log('resultados: ', data);
@@ -66,10 +66,10 @@ export class nfcPage {
   //ya que tenga los datos, irAPaginaPerfil con los datos para mostrar
   
 
-  irPaginaPerfil( mutante:any ){
-    console.log( mutante );
+  irPaginaPerfil( muerto:any ){
+    console.log( muerto );
 
-      this.navCtrl.push( PerfilesPage, { 'mutante': mutante } );
+      this.navCtrl.push( PerfilesPage, { 'objetivo': muerto } );
 
   }
 
