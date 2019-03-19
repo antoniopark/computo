@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from "@angular/common/http";
 import { MyApp } from './app.component';
+import { NFC, Ndef } from '@ionic-native/nfc';
+
 
 
 import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, PageBuscarPage} from "../pages/index.paginas";
@@ -39,6 +41,8 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,Ta
   providers: [
     StatusBar,
     SplashScreen,
+    NFC,
+    Ndef,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

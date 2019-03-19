@@ -81,6 +81,6 @@
     <plugin name="cordova-plugin-device" spec="1.1.4" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
-    <plugin name="phonegap-nfc" spec="1.0.3" />
+    <plugin name="phonegap-nfc" spec="^1.0.3" />
     <engine name="android" spec="7.1.4" />
 </widget>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
-import { NFC, Ndef } from "@ionic-native/nfc/ngx";
+import { NFC, Ndef } from '@ionic-native/nfc';
 import { PerfilesPage } from "../index.paginas";
 import { Observable } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
@@ -50,7 +50,7 @@ export class nfcPage {
         console.log('error attaching ndef listener', err);
       }).subscribe((event) => {
         console.log('received message. Tag contains: ', event.tag);
-        console.log('tag id: ', this.nfc.bytesToHexString(event.tag.id));
+        console.log('tanpmg id: ', this.nfc.bytesToHexString(event.tag.id));
         this.ajaxCall(this.nfc.bytesToHexString(event.tag.id));
       });
 
