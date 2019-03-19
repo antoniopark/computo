@@ -13,11 +13,11 @@ import { HttpClient } from "@angular/common/http";
 })
 export class nfcPage {
 
-  results:any = Observable; // ?? 
+  results:any = Observable; // ??
   perfiles:any = PerfilesPage;
-//aqui se estara escuchando el nfc 
-//una vez que lo encuentre, se hace el ajax request con el que recibió 
-//y se abre la pantalla de Perfil con el json llenando los campos 
+//aqui se estara escuchando el nfc
+//una vez que lo encuentre, se hace el ajax request con el que recibió
+//y se abre la pantalla de Perfil con el json llenando los campos
   mutantes:any[] = [
     {
       nombre:"Ernesto de la Cruz",
@@ -38,12 +38,12 @@ export class nfcPage {
       nombre:"Michael Jackson",
       muerte:"8 de Septiembre del 1989",
       epitafio:"Una tumba es suficiente para quien el Universo no bastara."
-    }]; 
+    }];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private nfc: NFC, private ndef: Ndef,
     public httpClient: HttpClient) {
-      //aqui escucha al nfc 
+      //aqui escucha al nfc
       this.nfc.addNdefListener(() => {
         console.log('attached ndef listener');
       }, (err) => {
@@ -53,7 +53,7 @@ export class nfcPage {
         console.log('tag id: ', this.nfc.bytesToHexString(event.tag.id));
         this.ajaxCall(this.nfc.bytesToHexString(event.tag.id));
       });
-      
+
   }
   //fetching api
   ajaxCall(idABuscar:any){
@@ -62,9 +62,9 @@ export class nfcPage {
     .subscribe(data => {
       console.log('resultados: ', data);
     })
-  } 
+  }
   //ya que tenga los datos, irAPaginaPerfil con los datos para mostrar
-  
+
 
   irPaginaPerfil( muerto:any ){
     console.log( muerto );
@@ -73,6 +73,6 @@ export class nfcPage {
 
   }
 
- 
+
 
 }
