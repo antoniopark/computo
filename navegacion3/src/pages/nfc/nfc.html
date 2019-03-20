@@ -14,7 +14,7 @@
 
 <ion-list>
     <ion-item *ngFor="let mutante of mutantes"
-      (click)="irPagina3( mutante )">
+      (click)="irPaginaPerfil( mutante )">
       {{ mutante.nombre }}
     </ion-item> 
 </ion-list>
@@ -24,7 +24,7 @@
 
 <ion-list>
     <ion-item *ngFor="let mutante of mutantes"
-    [navPush]="pagina3"
+    [navPush]="perfiles"
     [navParams]="{ 'mutante': mutante }">
       {{ mutante.nombre }}
     </ion-item> 

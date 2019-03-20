@@ -7,12 +7,12 @@ import { NavParams, NavController } from "ionic-angular";
   })
   export class PerfilesPage {
   
-    mutante:any = {};
+    muerto:any = {};
 
     constructor ( private navParams:NavParams, private navCtrl:NavController ){
       console.log( navParams );
 
-      this.mutante = this.navParams.get("mutante");
+      this.muerto = this.navParams.get("objetivo");
     }
 
     irAtras(){
