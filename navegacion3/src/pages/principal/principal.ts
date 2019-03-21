@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {nfcPage} from "../index.paginas";
+import { BuscarPage } from '../buscar/buscar';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {nfcPage} from "../index.paginas";
 })
 export class PrincipalPage {
 nfc:any = nfcPage;
-
+buscar:any = BuscarPage;
   constructor(public navCtrl: NavController) {
   }
 
@@ -17,4 +18,7 @@ nfc:any = nfcPage;
     this.navCtrl.push(nfcPage);
   }
 
+  irBuscarPagina(){
+    this.navCtrl.push(BuscarPage);
+  }
 }

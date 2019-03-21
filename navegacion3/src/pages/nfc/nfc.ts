@@ -40,16 +40,19 @@ export class nfcPage {
       epitafio:"Una tumba es suficiente para quien el Universo no bastara."
     }];
 
+  
+  //ya que tenga los datos, irAPaginaPerfil con los datos para mostrar
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private nfc: NFC, private ndef: Ndef,
     public httpClient: HttpClient) {
       //aqui escucha al nfc
       this.nfc.addNdefListener(() => {
+        
         console.log('attached ndef listener');
       }, (err) => {
         console.log('error attaching ndef listener', err);
       }).subscribe((event) => {
-        console.log('received message. Tag contains: ', event.tag);
+        console.log('received message. Tag contains: ', event);
         console.log('tanpmg id: ', this.nfc.bytesToHexString(event.tag.id));
         this.ajaxCall(this.nfc.bytesToHexString(event.tag.id));
       });
@@ -58,20 +61,21 @@ export class nfcPage {
   //fetching api
   ajaxCall(idABuscar:any){
     this.results = this.httpClient.get('https://skeleton-app-itson.000webhostapp.com/rest/rest/index.php/Muertos/obtener_muertosById/'+idABuscar);
-    this.results
+    console.log(this.results
+  
     .subscribe(data => {
       console.log('resultados: ', data);
-    })
+    }))
   }
-  //ya que tenga los datos, irAPaginaPerfil con los datos para mostrar
 
 
-  irPaginaPerfil( muerto:any ){
+ irPaginaPerfil( muerto:any ){
     console.log( muerto );
 
       this.navCtrl.push( PerfilesPage, { 'objetivo': muerto } );
 
   }
+ 
 
 
 

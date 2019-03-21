@@ -2,13 +2,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>NFC (AQUI SERA UNA IMAGEN DEL LOGO NFC MIENTRAS BUSCA EL ID DE LA TARJETA EL BACKEND )</ion-title>
+    <ion-title>NFC</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
-<ion-content padding>
 
 <h1>Enviando con evento</h1>
 
@@ -20,14 +17,18 @@
 </ion-list>
 
 
-<h1>Enviando con HTML</h1>
 
-<ion-list>
-    <ion-item *ngFor="let mutante of mutantes"
-    [navPush]="perfiles"
-    [navParams]="{ 'mutante': mutante }">
-      {{ mutante.nombre }}
-    </ion-item> 
-</ion-list>
 
-</ion-content>
+
+<ion-content padding class="masters">
+
+
+
+  <div class="centrado">
+    <div style="text-align:center">
+      <img src="assets/imgs/skull.png" />
+      <h1 style="color:white">Buscando..</h1>
+    </div>
+    
+  </div>
+</ion-content> 

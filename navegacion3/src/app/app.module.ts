@@ -9,7 +9,8 @@ import { NFC, Ndef } from '@ionic-native/nfc';
 
 
 
-import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, PageBuscarPage} from "../pages/index.paginas";
+import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, BuscarPage} from "../pages/index.paginas";
+import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,Ta
     nfcPage,
     PerfilesPage,
     TabsPage,
-    PageBuscarPage
+    BuscarPage
   ],
   imports: [
     BrowserModule,
@@ -36,14 +37,16 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,Ta
     ModalPage,
     nfcPage,
     PerfilesPage,
-    TabsPage
+    TabsPage,
+    BuscarPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     NFC,
     Ndef,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider
   ]
 })
 export class AppModule {}

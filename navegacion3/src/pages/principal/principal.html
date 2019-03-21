@@ -17,7 +17,7 @@
 
   <div class="centrado">
     <div style="text-align:center">
-      <img src="../assets/imgs/death.png" />
+      <img src="assets/imgs/death.png" />
     </div>
 
     <ion-card class="negro">
@@ -28,10 +28,10 @@
 
         <div style="text-align: center">
           <button ion-button round color="botons" (click)="navegarPagina()">
-            <ion-icon name="logo-rss"> NFC </ion-icon>  </button>
+            <ion-icon name="logo-rss"> Detectar Tumba </ion-icon>  </button>
 
-          <button ion-button round color="botons" [navPush]="pagina2">
-              <ion-icon name="search"> Buscar </ion-icon></button>
+          <button ion-button round color="botons" (click)="irBuscarPagina()">
+              <ion-icon name="search"> Buscar ubicación </ion-icon></button>
 
         </div>
 
