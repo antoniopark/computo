@@ -3,14 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-/**
- * Generated class for the BuscarPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-
 @Component({
   selector: 'page-buscar',
   templateUrl: 'buscar.html',
@@ -18,23 +10,16 @@ import { Observable } from 'rxjs';
 export class BuscarPage {
 
   searchQuery: string = '';
-  //items: string[];
+  
 public items:any;
-apiUrl = 'https://jsonplaceholder.typicode.com';
+
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient) {
-   //this.initializeItems();
     this.loadData();
   }
 
-  getUsers() {
-    return new Promise(resolve => {
-      this.http.get(this.apiUrl+'/users').subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
+  
   
 
   loadData(){
