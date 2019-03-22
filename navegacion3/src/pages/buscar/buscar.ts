@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { PerfilesPage } from '../perfilesMuertos/perfiles';
 
 @Component({
   selector: 'page-buscar',
@@ -29,6 +30,9 @@ export class BuscarPage {
     })
   }
 
+  irAPerfil(profile:any){
+    this.navCtrl.push(PerfilesPage, {'profile': profile});
+  }
 getItems(ev: any) {
   // Reset items back to all of the items
   

@@ -12,7 +12,7 @@ import { NavParams, NavController } from "ionic-angular";
     constructor ( private navParams:NavParams, private navCtrl:NavController ){
       console.log( navParams );
 
-      this.muerto = this.navParams.get("objetivo");
+      this.muerto = this.navParams.get("profile");
     }
 
     irAtras(){

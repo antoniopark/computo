@@ -17,8 +17,8 @@
 <!-- Searchbar with danger color -->
 <ion-searchbar  [(ngModel)]="searchQuery" (ionInput)="getItems($event)"></ion-searchbar>
 <ion-list>
-  <ion-item *ngFor="let item of items">
-    {{  item.nombres + " " + item.apellidos }}
+  <ion-item *ngFor="let profile of items" (click)="irAPerfil(profile)">
+    {{  profile.nombres + " " + profile.apellidos }}
   </ion-item>
 </ion-list>
 </ion-content>
