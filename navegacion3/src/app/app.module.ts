@@ -43,8 +43,8 @@ import { RestProvider } from '../providers/rest/rest';
   providers: [
     StatusBar,
     SplashScreen,
-    NFC,
-    Ndef,
+    // NFC,
+    // Ndef,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider
   ]
