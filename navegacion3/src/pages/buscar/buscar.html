@@ -18,7 +18,7 @@
 <ion-searchbar  [(ngModel)]="searchQuery" (ionInput)="getItems($event)"></ion-searchbar>
 <ion-list>
   <ion-item *ngFor="let item of items">
-    {{ item.name }}
+    {{  item.nombres + " " + item.apellidos }}
   </ion-item>
 </ion-list>
 </ion-content>

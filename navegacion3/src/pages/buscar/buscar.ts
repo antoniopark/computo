@@ -11,7 +11,7 @@ export class BuscarPage {
 
   searchQuery: string = '';
   
-public items:any;
+  public items:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient) {
     this.loadData();
@@ -19,10 +19,13 @@ public items:any;
 
   loadData(){
     console.log("se corre este metodo del diablo > ");
+    //let data:Observable<any>;
     let data:Observable<any>;
-    data = this.http.get('https://jsonplaceholder.typicode.com/users');
-    data.subscribe(result =>{
-    this.items = result;
+    data = this.http.get('https://skeleton-app-itson.000webhostapp.com/rest/rest/index.php/Muertos');
+    data.subscribe(results => {
+      //console.log(JSON.stringify(results.value)); // <- lo conviertes a JSON y accedes a value
+    
+      this.items = JSON.parse(JSON.stringify(results.value));
     })
   }
 
@@ -36,7 +39,8 @@ getItems(ev: any) {
   if (val && val.trim() != '') {
     
     this.items = this.items.filter((item) => {
-      return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      return (item.nombres.toLowerCase().indexOf(val.toLowerCase()) > -1 || 
+              item.apellidos.toLowerCase().indexOf(val.toLowerCase()) > -1);
     })
   }else if (val.trim() === ''){
     this.loadData();
