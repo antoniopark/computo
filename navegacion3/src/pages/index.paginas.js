@@ -6,4 +6,5 @@ export { nfcPage } from "./nfc/nfc";
 export { PerfilesPage } from "./perfilesMuertos/perfiles";
 export { TabsPage } from "./tabs/tabs";
 export { PageBuscarPage } from "./page-buscar/page-buscar";
+export {MapaDirectionPage} from "./mapa-direction/mapa-direction";
 //# sourceMappingURL=index.paginas.js.map

@@ -11,7 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from "@angular/common/http";
 import { MyApp } from './app.component';
-import { AjustesPage, Ajustes2Page, PrincipalPage, ModalPage, nfcPage, PerfilesPage, TabsPage, PageBuscarPage } from "../pages/index.paginas";
+import { AjustesPage, Ajustes2Page, PrincipalPage, ModalPage, nfcPage, PerfilesPage, TabsPage, PageBuscarPage, MapaDirectionPage } from "../pages/index.paginas";
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,7 +26,8 @@ var AppModule = (function () {
                 nfcPage,
                 PerfilesPage,
                 TabsPage,
-                PageBuscarPage
+                PageBuscarPage,
+                MapaDirectionPage
             ],
             imports: [
                 BrowserModule,

@@ -1,3 +1,5 @@
+import { NativeGeocoder } from '@ionic-native/native-geocoder/';
+//import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -5,11 +7,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from "@angular/common/http";
 import { MyApp } from './app.component';
+//import {NativeGeocoder} from '@ionic-native/native-geocoder';
 import { NFC, Ndef } from '@ionic-native/nfc';
+//import {Geolocation} from '@ionic-native/geolocation';
 
 
 
-import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, BuscarPage} from "../pages/index.paginas";
+
+import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, BuscarPage, MapaDirectionPage} from "../pages/index.paginas";
 import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
@@ -22,7 +27,8 @@ import { RestProvider } from '../providers/rest/rest';
     nfcPage,
     PerfilesPage,
     TabsPage,
-    BuscarPage
+    BuscarPage,
+    MapaDirectionPage
   ],
   imports: [
     BrowserModule,
@@ -38,11 +44,13 @@ import { RestProvider } from '../providers/rest/rest';
     nfcPage,
     PerfilesPage,
     TabsPage,
-    BuscarPage
+    BuscarPage,
+    MapaDirectionPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    NativeGeocoder,
     // NFC,
     // Ndef,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

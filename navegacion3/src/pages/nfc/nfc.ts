@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
-import { NFC } from '@ionic-native/nfc/ngx';
+import { NFC } from '@ionic-native/nfc/';
 import { PerfilesPage } from "../index.paginas";
 import { Observable } from 'rxjs';
 import { HttpClient } from "@angular/common/http";

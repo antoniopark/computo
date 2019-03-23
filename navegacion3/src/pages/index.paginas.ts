@@ -6,3 +6,4 @@ export {nfcPage} from "./nfc/nfc";
 export {PerfilesPage} from "./perfilesMuertos/perfiles";
 export {TabsPage} from "./tabs/tabs";  
 export {BuscarPage} from "./buscar/buscar";
+export {MapaDirectionPage} from "./mapa-direction/mapa-direction";

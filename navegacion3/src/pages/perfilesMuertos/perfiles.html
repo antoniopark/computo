@@ -10,27 +10,38 @@
   <ion-content padding class="masters">
   
     <ion-card class="negro">
-      <img width="250" height="250" src="../assets/imgs/cruz.jpg"/>
+      <img width="250" height="250" src="" id="fotoProfile"/>
       <ion-card-content>
         <ion-card-title style="color:white;">
           {{muerto.nombres + " " + muerto.apellidos }}
           </ion-card-title>
         <p style="color:white;">
+          {{ muerto.fechaNacimiento }} + " " + {{muerto.fechaFallecimiento}} <br>
           {{ muerto.epitafio }} <br>
-          {{ muerto.ubicacion }}
+        </p>
+        <p style="color: white;">
+         ubicacion: {{muerto.ubicacion}}
+           <!--Basic: auto-select the icon based on the platform -->
+          <ion-icon name="map"
+          (click)="showUbication(muerto)"></ion-icon>
         </p>
       </ion-card-content>
     </ion-card>
 
 
-  
-
-  <button ion-button
+  <!-- //test -->
+  <!--Basic: auto-select the icon based on the platform -->
+  <ion-icon name="arrow-round-back"
+  (click)="irAtras()"></ion-icon>
+  <!--Basic: auto-select the icon based on the platform -->
+  <ion-icon name="home"
+  (click)="irHome()"></ion-icon>
+  <!-- <button ion-button
           block
           color="primary"
           (click)="irAtras()">
           volver
-  </button>
+  </button> -->
 
   
 
