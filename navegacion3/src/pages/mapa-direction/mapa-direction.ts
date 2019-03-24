@@ -16,6 +16,11 @@ import { NativeGeocoder, NativeGeocoderForwardResult, NativeGeocoderOptions } fr
 })
 export class MapaDirectionPage {
 
+  lat: number ;
+  lng: number ;
+  Mylat: number;
+  Mylng: number;
+
   muerto:any={};
   ubicacion:any={};
   latitude:any ={};
@@ -28,6 +33,7 @@ export class MapaDirectionPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public nativeGeo: NativeGeocoder) {
   
+      
     this.muerto = this.navParams.get("muerto");
     this.ubicacion = this.muerto.ubicacion; //< checa la ubicacion que recibe 
     //console.log(this.ubicacion); 
@@ -41,6 +47,14 @@ export class MapaDirectionPage {
       this.showMap();
     })
     .catch((error: any) => console.log(error)); //si no, tira error 
+    
+
+//aqui igualas a las coordenadas de la tumba
+    this.lat = 27.4809055;
+    this.lng = -109.9903525;
+//Aqui igualas la a las coordenadas de tu posicion
+    this.Mylat = 27.48185727862723;
+    this.Mylng = -109.98972489922475;
   }
 
   

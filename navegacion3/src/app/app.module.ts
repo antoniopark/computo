@@ -13,6 +13,8 @@ import { NFC, Ndef } from '@ionic-native/nfc';
 
 
 
+//Mapa
+import { AgmCoreModule } from '@agm/core';
 
 import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, BuscarPage, MapaDirectionPage} from "../pages/index.paginas";
 import { RestProvider } from '../providers/rest/rest';
@@ -33,7 +35,11 @@ import { RestProvider } from '../providers/rest/rest';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+ AgmCoreModule.forRoot({
+  apiKey: 'AIzaSyDhIfq5v19WsAbDy20e47-ZHZjU67q7Go0'
+})
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -21,4 +21,6 @@ buscar:any = BuscarPage;
   irBuscarPagina(){
     this.navCtrl.push(BuscarPage);
   }
+
+  //falta crear la page para "Descubrir"
 }

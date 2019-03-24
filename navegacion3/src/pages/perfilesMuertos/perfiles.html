@@ -1,6 +1,6 @@
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="dark">
       <ion-title>{{ muerto.nombres }}</ion-title>
     </ion-navbar>
   
@@ -16,7 +16,7 @@
           {{muerto.nombres - muerto.apellidos }}
           </ion-card-title>
         <p style="color:white;">
-          {{ muerto.fechaNacimiento }} + " " + {{muerto.fechaFallecimiento}} <br>
+          {{ muerto.fechaNacimiento  + " - " +  muerto.fechaFallecimiento}} <br>
           {{ muerto.epitafio }} <br>
         </p>
         <p style="color: white;">
