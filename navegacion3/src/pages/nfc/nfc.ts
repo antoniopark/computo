@@ -62,7 +62,7 @@ export class nfcPage {
     console.log(this.results
   
     .subscribe(data => {
-      console.log('resultados: ', data);
+      console.log('resultados: ',typeof data);
     }))
   }
 
