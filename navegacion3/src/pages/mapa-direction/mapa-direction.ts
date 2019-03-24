@@ -34,12 +34,19 @@ export class MapaDirectionPage {
 
     //metodo para obtener las coordenadas V 
     this.nativeGeo.forwardGeocode(this.ubicacion, this.options) //si todo sale bien, las imprime
-    .then((coordinates: NativeGeocoderForwardResult[]) => console.log('Coordinates are: latitude: '+coordinates[0].latitude + ' and longitude=  '+coordinates[0].longitude))
+    .then((coordinates: NativeGeocoderForwardResult[]) => {
+      this.latitude = coordinates[0].latitude;
+      this.longitud = coordinates[0].longitude; 
+      console.log(this.latitude + " " + this.longitud);
+      this.showMap();
+    })
     .catch((error: any) => console.log(error)); //si no, tira error 
   }
 
   
-
+  showMap() {
+    //launch map with google maps 
+  }
   ionViewDidLoad() {
     //console.log('ionViewDidLoad MapaDirectionPage');
   }
