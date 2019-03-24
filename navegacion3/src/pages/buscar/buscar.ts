@@ -22,7 +22,7 @@ export class BuscarPage {
     console.log("se corre este metodo del diablo > ");
     //let data:Observable<any>;
     let data:Observable<any>;
-    data = this.http.get('https://skeleton-app-itson.000webhostapp.com/rest/rest/index.php/Muertos');
+    data = this.http.get('https://skeleton-app-itson.000webhostapp.com/rest/index.php/Muertos');
     data.subscribe(results => {
       //console.log(JSON.stringify(results.value)); // <- lo conviertes a JSON y accedes a value
     
