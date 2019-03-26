@@ -9,10 +9,10 @@ import {MapaDirectionPage} from "../mapa-direction/mapa-direction";
   export class PerfilesPage {
   
     muerto:any = {};
-
+   // muertonfc: any= {};
     constructor ( private navParams:NavParams, private navCtrl:NavController ){
       console.log( navParams );
-
+      //this.muertonfc = this.navParams.get("muertonfc");
       this.muerto = this.navParams.get("profile");
       if(this.muerto.imagen){
         document.getElementById("fotoProfile").setAttribute("src", this.muerto.imagen);

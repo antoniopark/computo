@@ -1,51 +1,37 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams, ToastController  } from 'ionic-angular';
 import { NFC } from '@ionic-native/nfc/';
-import { PerfilesPage } from "../index.paginas";
+//import { PerfilesPageNFC } from '../perfiles-nfc/perfiles-nfc';
 import { Observable } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
+//import { PerfilesPage } from '../perfilesMuertos/perfiles';
+import {PerfilesnfcPage} from "../perfilesnfc/perfilesnfc";
 
 @Component({
   selector: 'page-nfc',
   templateUrl: 'nfc.html',
 })
 export class nfcPage {
+tagID: string;
+public muertito: any;
 
   results:any = Observable; // ??
-  perfiles:any = PerfilesPage;
+  //perfiles:any = PerfilesPage;
 //aqui se estara escuchando el nfc
 //una vez que lo encuentre, se hace el ajax request con el que recibió
 //y se abre la pantalla de Perfil con el json llenando los campos
-  mutantes:any[] = [
-    {
-      nombre:"Ernesto de la Cruz",
-      muerte:"8/Sep/1989 - 20/Oct/2018",
-      epitafio:"Una tumba es suficiente para quien el Universo no bastara."
-    },
-    {
-      nombre:"Los sueños del Hermosillo",
-      muerte:"8 de Septiembre del 1989",
-      epitafio:"Una tumba es suficiente para quien el Universo no bastara."
-    },
-    {
-      nombre:"Steve Jobs",
-      muerte:"8 de Septiembre del 1989",
-      epitafio:"Una tumba es suficiente para quien el Universo no bastara."
-    },
-    {
-      nombre:"Michael Jackson",
-      muerte:"8 de Septiembre del 1989",
-      epitafio:"Una tumba es suficiente para quien el Universo no bastara."
-    }];
+  
 
   
   //ya que tenga los datos, irAPaginaPerfil con los datos para mostrar
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private nfc: NFC,
-    public httpClient: HttpClient) {
+    public http: HttpClient, private toastCtrl: ToastController) {
+ 
+      /*
       //aqui escucha al nfc
       this.nfc.addNdefListener(() => {
-        
+        console.log("entra a addEventListener");
         console.log('attached ndef listener');
       }, (err) => {
         console.log('error attaching ndef listener', err);
@@ -54,25 +40,73 @@ export class nfcPage {
         console.log('tanpmg id: ', this.nfc.bytesToHexString(event.tag.id));
         this.ajaxCall(this.nfc.bytesToHexString(event.tag.id));
       });
+*/
+
+this.nfc.addNdefListener().subscribe(data => {
+  if (data && data.tag && data.tag.id) {      
+      if (data.tag.ndefMessage) {
+          let toast = this.toastCtrl.create({
+              message: 'Tag NFC encontrado',
+              duration: 1000,
+              position: 'bottom'
+          });
+
+          toast.present();
+
+          let payload = data.tag.ndefMessage[0].payload;
+          let tagContent = this.nfc.bytesToString(payload).substring(3);
+          console.log("IMPRESION SOLA DEL TAGCONTENT");
+          console.log(tagContent);
+          this.ajaxCall(tagContent);
+          
+          
+      } else {
+          let toast = this.toastCtrl.create({
+              message: 'Tag NFC no encontrado',
+              duration: 1000,
+              position: 'bottom'
+          });
+
+          toast.present();
+
+      }
+  }
+  
+});
+
 
   }
   //fetching api
   ajaxCall(idABuscar:any){
-    this.results = this.httpClient.get('https://skeleton-app-itson.000webhostapp.com/rest/rest/index.php/Muertos/obtener_muertosById/'+idABuscar);
-    console.log(this.results
-  
-    .subscribe(data => {
-      console.log('resultados: ', data);
+   
+    this.results = this.http.get('https://skeleton-app-itson.000webhostapp.com/rest/index.php/Muertos/obtener_muertosById/'+idABuscar);
+    (this.results
+      .subscribe(data => {
+      console.log(this.results);//console.log('resultados: ', data);
+     console.log("AAQUI ABAJO LO PASO A LA VARIABLE THIS.MUERTITO CONVERTIO A STRING")
+      this.muertito = JSON.stringify(data.value);
+      console.log("datos del muerto antes de entrar al metodo");
+      console.log(this.muertito);
+      this.irPaginaPerfil(this.muertito);  
     }))
   }
 
 
- irPaginaPerfil( muerto:any ){
-    console.log( muerto );
-
-      this.navCtrl.push( PerfilesPage, { 'objetivo': muerto } );
+ irPaginaPerfil( profile:any ){
+  console.log( profile );
+    console.log("YA DENTRO DEL MEDOTO IR PERFIL AQUI ABAJO LO IMPRIMIRA CONVERTIRO A STRING")
+    console.log(this.muertito);
+    JSON.parse(this.muertito);
+    console.log("LO IMPRIMIRA ABAJO YA CONVERTIDO A JSON");
+    console.log(this.muertito);
+      //this.navCtrl.push( PerfilesPage, { 'objetivo': muerto } );
+    
+   console.log("AQUI VA A HACER EL PUSH ya dentro del metodo");
+   console.log(this.muertito);
+      this.navCtrl.push(PerfilesnfcPage, {'profile': profile});
 
   }
+
  
 
 
