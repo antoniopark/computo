@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { NativeGeocoder, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
-import { Geoposition } from '@ionic-native/geolocation';
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 /**
