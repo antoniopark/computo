@@ -4,8 +4,9 @@ import { NFC } from '@ionic-native/nfc/';
 //import { PerfilesPageNFC } from '../perfiles-nfc/perfiles-nfc';
 import { Observable } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
-//import { PerfilesPage } from '../perfilesMuertos/perfiles';
+import { PerfilesPage } from '../perfilesMuertos/perfiles';
 import {PerfilesnfcPage} from "../perfilesnfc/perfilesnfc";
+
 
 @Component({
   selector: 'page-nfc',
@@ -74,7 +75,7 @@ this.nfc.addNdefListener().subscribe(data => {
   
 });
 
-
+//this.ajaxCall(2);
   }
   //fetching api
   ajaxCall(idABuscar:any){
@@ -96,15 +97,15 @@ this.nfc.addNdefListener().subscribe(data => {
    //console.log( profile );
     //console.log("YA DENTRO DEL MEDOTO IR PERFIL AQUI ABAJO LO IMPRIMIRA CONVERTIRO A STRING")
     //console.log(this.muertito);
-    profile = JSON.parse(this.muertito); //aqui lo conviertes a json 
+    profile = JSON.parse(profile); //aqui lo conviertes a json 
    // console.log("LO IMPRIMIRA ABAJO YA CONVERTIDO A JSON");
     //console.log(this.muertito);
     
   // console.log("AQUI VA A HACER EL PUSH ya dentro del metodo");
    //console.log(this.muertito);
    console.log("lo que se le mandaraa a la pagina: ");
-   console.log(profile);
-      this.navCtrl.push(PerfilesnfcPage, {'profile': profile}); //pero aqui, de todos modos, le mandas el string 
+   console.log(profile[0]);
+      this.navCtrl.push(PerfilesPage, {'profile': profile[0]}); //pero aqui, de todos modos, le mandas el string 
 
   }
 
