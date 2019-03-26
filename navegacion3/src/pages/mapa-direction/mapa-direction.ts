@@ -41,15 +41,16 @@ export class MapaDirectionPage {
     public nativeGeo: NativeGeocoder,
     private geolocation: Geolocation) {
   
-      this.geolocation.getCurrentPosition(getPosition);
+      this.geolocation.getCurrentPosition().then((resp)=>{
 
-      function getPosition(position){
-        this.Mylat = position.coords.latitude;
-        this.Mylng = position.coords.longitude;
+        this.Mylat = resp.coords.latitude;
+        this.Mylng = resp.coords.longitude;
         console.log("las coordenadas que obtuvo son: ");
-        console.log("lat: "+this.MyLat);
-        console.log("long: "+this.MyLong);
-      }
+        console.log("lat: "+this.Mylat);
+        console.log("long: "+this.Mylng);
+      }).catch((error) =>{
+        console.log("error al obtener posicion", error);
+      });
     this.muerto = this.navParams.get("muerto");
     this.ubicacion = this.muerto.ubicacion; //< checa la ubicacion que recibe 
     //console.log(this.ubicacion); 
