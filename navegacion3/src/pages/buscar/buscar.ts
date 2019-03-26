@@ -31,6 +31,7 @@ export class BuscarPage {
   }
 
   irAPerfil(profile:any){
+    
     this.navCtrl.push(PerfilesPage, {'profile': profile});
   }
 getItems(ev: any) {

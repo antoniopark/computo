@@ -50,11 +50,13 @@ export class MapaDirectionPage {
     
 
 //aqui igualas a las coordenadas de la tumba
-    this.lat = 27.4809055;
-    this.lng = -109.9903525;
+ //   this.lat = 27.4809055;
+ //   this.lng = -109.9903525;
+      this.lat = this.latitude; //coordenadas de la tumba
+      this.lng = this.longitud; //coordenadas de la tumba
 //Aqui igualas la a las coordenadas de tu posicion
-    this.Mylat = 27.48185727862723;
-    this.Mylng = -109.98972489922475;
+    this.Mylat = 27.48185727862723; //aqui tienen que ser las de tu posicion, no fijas 
+    this.Mylng = -109.98972489922475; // same 
   }
 
   
