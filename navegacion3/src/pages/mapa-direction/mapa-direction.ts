@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { NativeGeocoder, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
+import { Geoposition } from '@ionic-native/geolocation';
 
 
 /**
@@ -30,10 +31,25 @@ export class MapaDirectionPage {
     maxResults: 5
   };
 
+  geopositionOptions: PositionOptions ={
+    enableHighAccuracy: false,
+    maximumAge:0,
+    timeout: 4000
+  };
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public nativeGeo: NativeGeocoder) {
+    public nativeGeo: NativeGeocoder,
+    private geolocation: Geolocation) {
   
-      
+      this.geolocation.getCurrentPosition(getPosition);
+
+      function getPosition(position){
+        this.Mylat = position.coords.latitude;
+        this.Mylng = position.coords.longitude;
+        console.log("las coordenadas que obtuvo son: ");
+        console.log("lat: "+this.MyLat);
+        console.log("long: "+this.MyLong);
+      }
     this.muerto = this.navParams.get("muerto");
     this.ubicacion = this.muerto.ubicacion; //< checa la ubicacion que recibe 
     //console.log(this.ubicacion); 
@@ -55,8 +71,8 @@ export class MapaDirectionPage {
       this.lat = this.latitude; //coordenadas de la tumba
       this.lng = this.longitud; //coordenadas de la tumba
 //Aqui igualas la a las coordenadas de tu posicion
-    this.Mylat = 27.48185727862723; //aqui tienen que ser las de tu posicion, no fijas 
-    this.Mylng = -109.98972489922475; // same 
+   // this.Mylat = 27.48185727862723; //aqui tienen que ser las de tu posicion, no fijas 
+   // this.Mylng = -109.98972489922475; // same 
   }
 
   

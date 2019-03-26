@@ -9,7 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MyApp } from './app.component';
 //import {NativeGeocoder} from '@ionic-native/native-geocoder';
 import { NFC, Ndef } from '@ionic-native/nfc';
-//import {Geolocation} from '@ionic-native/geolocation';
+import {Geolocation} from '@ionic-native/geolocation';
 
 
 
@@ -62,6 +62,7 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,Ta
     StatusBar,
     SplashScreen,
     NativeGeocoder,
+    Geolocation,
     NFC,
     Ndef,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
