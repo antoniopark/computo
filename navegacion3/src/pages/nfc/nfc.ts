@@ -87,23 +87,24 @@ this.nfc.addNdefListener().subscribe(data => {
       this.muertito = JSON.stringify(data.value);
       console.log("datos del muerto antes de entrar al metodo");
       console.log(this.muertito);
-      this.irPaginaPerfil(this.muertito);  
+      this.irPaginaPerfil(this.muertito);   //recibe un string 
     }))
   }
 
 
- irPaginaPerfil( profile:any ){
-  console.log( profile );
-    console.log("YA DENTRO DEL MEDOTO IR PERFIL AQUI ABAJO LO IMPRIMIRA CONVERTIRO A STRING")
-    console.log(this.muertito);
-    JSON.parse(this.muertito);
-    console.log("LO IMPRIMIRA ABAJO YA CONVERTIDO A JSON");
-    console.log(this.muertito);
-      //this.navCtrl.push( PerfilesPage, { 'objetivo': muerto } );
+ irPaginaPerfil( profile:any ){  //recibe un string 
+   //console.log( profile );
+    //console.log("YA DENTRO DEL MEDOTO IR PERFIL AQUI ABAJO LO IMPRIMIRA CONVERTIRO A STRING")
+    //console.log(this.muertito);
+    profile = JSON.parse(this.muertito); //aqui lo conviertes a json 
+   // console.log("LO IMPRIMIRA ABAJO YA CONVERTIDO A JSON");
+    //console.log(this.muertito);
     
-   console.log("AQUI VA A HACER EL PUSH ya dentro del metodo");
-   console.log(this.muertito);
-      this.navCtrl.push(PerfilesnfcPage, {'profile': profile});
+  // console.log("AQUI VA A HACER EL PUSH ya dentro del metodo");
+   //console.log(this.muertito);
+   console.log("lo que se le mandaraa a la pagina: ");
+   console.log(profile);
+      this.navCtrl.push(PerfilesnfcPage, {'profile': profile}); //pero aqui, de todos modos, le mandas el string 
 
   }
 
