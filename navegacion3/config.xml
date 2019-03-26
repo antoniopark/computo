@@ -84,4 +84,7 @@
     <plugin name="phonegap-nfc" spec="^1.0.3" />
     <plugin name="cordova-plugin-nativegeocoder" spec="3.2.1" />
     <engine name="android" spec="7.1.4" />
+    <plugin name="cordova-plugin-geolocation" spec="4.0.1">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
+    </plugin>
 </widget>
