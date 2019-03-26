@@ -58,9 +58,12 @@ export class MapaDirectionPage {
     //metodo para obtener las coordenadas V 
     this.nativeGeo.forwardGeocode(this.ubicacion, this.options) //si todo sale bien, las imprime
     .then((coordinates: NativeGeocoderForwardResult[]) => {
+      console.log(coordinates);
       this.latitude = coordinates[0].latitude;
       this.longitud = coordinates[0].longitude; 
-      console.log(this.latitude + " " + this.longitud);
+      this.lat = +this.latitude;
+      this.lng = +this.longitud;
+      console.log(this.lat + " " + this.lng);
       this.showMap();
     })
     .catch((error: any) => console.log(error)); //si no, tira error 
@@ -69,8 +72,10 @@ export class MapaDirectionPage {
 //aqui igualas a las coordenadas de la tumba
  //   this.lat = 27.4809055;
  //   this.lng = -109.9903525;
-      this.lat = this.latitude; //coordenadas de la tumba
-      this.lng = this.longitud; //coordenadas de la tumba
+     // this.lat = this.latitude; //coordenadas de la tumba
+      //this.lng = this.longitud; //coordenadas de la tumba
+      console.log(this.lat);
+      console.log(this.lng);
 //Aqui igualas la a las coordenadas de tu posicion
    // this.Mylat = 27.48185727862723; //aqui tienen que ser las de tu posicion, no fijas 
    // this.Mylng = -109.98972489922475; // same 
