@@ -16,7 +16,7 @@ import {Geolocation} from '@ionic-native/geolocation';
 //Mapa
 import { AgmCoreModule } from '@agm/core';
 
-import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, BuscarPage, MapaDirectionPage,PerfilesnfcPage} from "../pages/index.paginas";
+import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,TabsPage, BuscarPage, MapaDirectionPage,PerfilesnfcPage,DescubrirPage} from "../pages/index.paginas";
     
     import { RestProvider } from '../providers/rest/rest';
 
@@ -32,7 +32,8 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,Ta
     TabsPage,
     BuscarPage,
     MapaDirectionPage,
-    PerfilesnfcPage
+    PerfilesnfcPage,
+    DescubrirPage,
   
   ],
   imports: [
@@ -55,8 +56,8 @@ import {AjustesPage,Ajustes2Page,PrincipalPage,ModalPage,nfcPage,PerfilesPage,Ta
     TabsPage,
     BuscarPage,
     MapaDirectionPage,
-    PerfilesnfcPage
-
+    PerfilesnfcPage,
+    DescubrirPage
   ],
   providers: [
     StatusBar,

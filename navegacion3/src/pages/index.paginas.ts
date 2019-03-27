@@ -8,3 +8,4 @@ export {TabsPage} from "./tabs/tabs";
 export {BuscarPage} from "./buscar/buscar";
 export {MapaDirectionPage} from "./mapa-direction/mapa-direction";
 export {PerfilesnfcPage} from "./perfilesnfc/perfilesnfc";
+export {DescubrirPage} from "./descubrir/descubrir";

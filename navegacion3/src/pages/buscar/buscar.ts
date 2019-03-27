@@ -16,6 +16,7 @@ export class BuscarPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient) {
     this.loadData();
+    
   }
 
   loadData(){
@@ -25,10 +26,12 @@ export class BuscarPage {
     data = this.http.get('https://skeleton-app-itson.000webhostapp.com/rest/index.php/Muertos');
     data.subscribe(results => {
       //console.log(JSON.stringify(results.value)); // <- lo conviertes a JSON y accedes a value
-    
-      this.items = JSON.parse(JSON.stringify(results.value));
+      console.log("se imprimira el result")
+    console.log( this.items = JSON.parse(JSON.stringify(results.value)));
+     
     })
   }
+  
 
   irAPerfil(profile:any){
     
